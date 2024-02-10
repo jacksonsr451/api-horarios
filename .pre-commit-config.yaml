@@ -1,14 +1,18 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.5.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.8.0
+    rev: v5.10.1
     hooks:
       - id: isort
-  - repo: https://github.com/psf/black
-    rev: 20.8b1
+  - repo: local
     hooks:
-      - id: black
+      - id: run-blue
+        name: Run Blue formatter
+        entry: python run_blue.py
+        language: system
+        pass_filenames: false
+        types: [python]
