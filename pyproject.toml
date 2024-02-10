@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "api-horarios"
+version = "0.1.0"
+description = "This is a simple microservice to manage in school"
+authors = ["jacksonsr45 <jackson.severino.rocha@escola.pr.gov.br>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "api_horarios"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.2"
+python-decouple = "^3.8"
+flask-migrate = "^4.0.5"
+sqlalchemy = "^2.0.25"
+isort = "^5.13.2"
+blue = "^0.9.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
