@@ -11,6 +11,6 @@ def init_table_teacher(base):
 class Teacher(Base):
     __tablename__ = 'teachers'
 
-    id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True)
     name = Column(String)
     disciplines = Column(ARRAY(String))
