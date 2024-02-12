@@ -1,14 +1,11 @@
 from sqlalchemy import ARRAY, Column, String
 
-Base = None
+from .base import Base
 
 
-def init_table_discipline(base):
-    global Base
-    Base = base
+class Discipline(Base):
+    __tablename__ = 'disciplines'
 
-
-class Discipline:
     id = Column(String, primary_key=True)
     name = Column(String)
     schedules = Column(ARRAY(String))
