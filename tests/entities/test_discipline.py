@@ -1,6 +1,7 @@
 import pytest
 
 from src.entities.discipline import Discipline
+from src.entities.exceptions.id_exception import IdException
 from src.entities.exceptions.name_exception import NameException
 
 
@@ -31,3 +32,14 @@ def test_discipline_with_schedules():
     schedules = ['Monday 10:00', 'Wednesday 14:00', 'Friday 16:00']
     discipline = Discipline(name='Math', schedules=schedules)
     assert discipline.schedules == schedules
+
+
+def test_discipline_id_validation():
+    # Valid ID
+    valid_id = '550e8400-e29b-41d4-a716-446655440000'
+    discipline = Discipline(name='Math', id=valid_id)
+    assert discipline.id == valid_id
+
+    # Invalid ID (raises IdException)
+    with pytest.raises(IdException):
+        Discipline(name='Math', id='invalid_id')
