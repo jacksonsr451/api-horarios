@@ -2,20 +2,6 @@ import pytest
 
 from src.entities.exceptions.name_exception import NameException
 from src.entities.teacher import Teacher
-from src.main import create_app
-
-
-@pytest.fixture
-def app():
-    app = create_app()
-    app.config['TESTING'] = True
-    yield app
-
-
-@pytest.fixture
-def client(app):
-
-    return app.test_client()
 
 
 def test_teacher_creation():
