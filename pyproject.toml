@@ -19,6 +19,7 @@ dynaconf = "^3.2.4"
 python-dotenv = "^1.0.1"
 flask-script = "^2.0.6"
 pytest = "^8.0.0"
+flasgger = "^0.9.7.1"
 
 
 [build-system]
