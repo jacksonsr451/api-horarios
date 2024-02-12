@@ -1,6 +1,8 @@
 from sqlalchemy import Column, ForeignKey, String
 
+from src.entities.enums.day_of_week_enum import DayOfWeekEnum
 from src.entities.services.id_validator import IdValidator
+from src.entities.services.time_validate import TimeValidator
 
 from .base import Base
 
@@ -22,5 +24,5 @@ class Restriction(Base):
     ) -> None:
         self.id = IdValidator.validate(id)
         self.teacher_id = IdValidator.validate(teacher_id)
-        self.day = day
-        self.time = time
+        self.day = DayOfWeekEnum.get(day)
+        self.time = TimeValidator.validate(time=time)
