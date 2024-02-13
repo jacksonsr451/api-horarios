@@ -1,11 +1,22 @@
 from typing import List
 
+from flask_restx import fields
 from sqlalchemy import ARRAY, Column, String
 
+from src.adapters.controllers.api import api
 from src.entities.services.id_validator import IdValidator
 from src.entities.services.name_validator import NameValidator
 
 from .base import Base
+
+discipline_model = api.model(
+    'Discipline',
+    {
+        'id': fields.String,
+        'name': fields.String,
+        'schedules': fields.List(fields.String),
+    },
+)
 
 
 class Discipline(Base):
