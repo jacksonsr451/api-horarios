@@ -3,7 +3,7 @@ from flask_restx import Namespace, Resource
 from src.entities.discipline import discipline_model
 
 ns_discipline = Namespace(
-    'discipline', description='This is a values by discipline'
+    'discipline', description='This is references to discipline'
 )
 
 
