@@ -12,9 +12,14 @@ from .base import Base
 discipline_model = api.model(
     'Discipline',
     {
-        'id': fields.String,
-        'name': fields.String,
-        'schedules': fields.List(fields.String),
+        'id': fields.String(
+            description='The unique identifier for the discipline.'
+        ),
+        'name': fields.String(description='The name of the discipline.'),
+        'schedules': fields.List(
+            fields.String,
+            description='A list of schedule IDs associated with this discipline.',
+        ),
     },
 )
 

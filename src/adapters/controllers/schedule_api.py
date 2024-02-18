@@ -3,7 +3,7 @@ from flask_restx import Namespace, Resource
 from src.entities.schedule import schedule_model
 
 ns_schedule = Namespace(
-    'api/v1/schedule', description='This is references to restriction'
+    'api/v1/schedule', description='This is references to schedule'
 )
 
 

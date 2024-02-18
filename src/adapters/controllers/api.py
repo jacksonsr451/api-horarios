@@ -1,5 +1,7 @@
 from flask_restx import Api
 
+from .teacher_api import ns_teacher
+
 api = Api(
     doc='/api/docs',
     version='1.0',
@@ -18,3 +20,4 @@ def init_app(app) -> None:
     api.add_namespace(ns_discipline)
     api.add_namespace(ns_restriction)
     api.add_namespace(ns_schedule)
+    api.add_namespace(ns_teacher)

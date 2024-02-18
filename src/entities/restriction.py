@@ -11,10 +11,18 @@ from .base import Base
 restriction_model = api.model(
     'Restriction',
     {
-        'id': fields.String,
-        'teacher_id': fields.String,
-        'day': fields.String,
-        'time': fields.String,
+        'id': fields.String(
+            description='The unique identifier for the restriction.'
+        ),
+        'teacher_id': fields.String(
+            description='The unique identifier for the teacher associated with the restriction.'
+        ),
+        'day': fields.String(
+            description='The day of the week for the restriction (e.g., "Monday", "Tuesday", etc.).'
+        ),
+        'time': fields.String(
+            description='The time of day for the restriction (e.g., "08:00", "13:30", etc.).'
+        ),
     },
 )
 
