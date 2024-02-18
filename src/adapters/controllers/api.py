@@ -14,7 +14,9 @@ def init_app(app) -> None:
     from .discipline_api import ns_discipline
     from .restriction_api import ns_restriction
     from .schedule_api import ns_schedule
+    from .teacher_api import ns_teacher
 
     api.add_namespace(ns_discipline)
     api.add_namespace(ns_restriction)
     api.add_namespace(ns_schedule)
+    api.add_namespace(ns_teacher)
