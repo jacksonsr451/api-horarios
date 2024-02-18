@@ -1,6 +1,19 @@
+from flask_restx import fields
 from sqlalchemy import Column, ForeignKey, String
 
+from src.adapters.controllers.api import api
+
 from .base import Base
+
+schedule_model = api.model(
+    'Schedule',
+    {
+        'id': fields.String,
+        'discipline_id': fields.String,
+        'day': fields.String,
+        'time': fields.String,
+    },
+)
 
 
 class Schedule(Base):
