@@ -3,11 +3,11 @@ from flask_restx import Namespace, Resource
 from src.entities.discipline import discipline_model
 
 ns_discipline = Namespace(
-    'discipline', description='This is references to discipline'
+    'api/vi/discipline', description='This is references to discipline'
 )
 
 
-@ns_discipline.route('/discipline')
+@ns_discipline.route('/')
 class DisciplineAPI(Resource):
     @ns_discipline.doc('list_disciplines')
     @ns_discipline.marshal_list_with(discipline_model, envelope='data')
