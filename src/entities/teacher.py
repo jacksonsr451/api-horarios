@@ -12,6 +12,7 @@ from .base import Base
 teacher_model = api.model(
     'Teacher',
     {
+<<<<<<< HEAD
         'id': fields.String(
             description='The unique identifier for the teacher.'
         ),
@@ -20,6 +21,11 @@ teacher_model = api.model(
             fields.String,
             description='A list of disciplines taught by the teacher.',
         ),
+=======
+        'id': fields.String,
+        'name': fields.String,
+        'disciplines': fields.List(fields.String),
+>>>>>>> a336c210f00354bb9df70ff17ddb69827d3fdf85
     },
 )
 
